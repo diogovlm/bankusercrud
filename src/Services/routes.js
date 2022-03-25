@@ -8,10 +8,10 @@ const AppRoutes = () => {
   return (
       <Routes>
         <Route exact path='/' element={<Users/>} />
-        <Route path='/newuser' element={<NewUser/>}  />
-        <Route path='/newbank' element={<NewBank/>}  />
-        <Route path='/updateuser' element={<NewUser/>}  />
-        <Route path='/updatebank' element={<NewBank/>}  />
+        <Route path='/newuser' element={<NewUser/>}/>
+        <Route path='/newbank' element={<NewBank/>} />
+        <Route path='/updateuser' element={<NewUser/>}/>
+        <Route path='/updatebank' element={<NewBank/>}/>
       </Routes>
   );
 };

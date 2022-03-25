@@ -8,9 +8,9 @@ export const NumberPages = async () =>{
     return response/5;
 }
 
-export const GetAllUsers = async (pagination) =>{
+export const GetAllUsers = async (pagination, limitPage) =>{
     let response;
-    await api.get('/users', {params: {page: pagination, itemsPerPage:5}}).then((data)=>{
+    await api.get('/users', {params: {page: pagination, itemsPerPage:limitPage}}).then((data)=>{
         response = data.data['hydra:member'];
     })
     return response;
@@ -40,7 +40,14 @@ export const CreateUser =  (name, cpf, email) =>{
 
 export const CreateBankAccount =  (accountName, agency, agencyDigit, accountNumber, accountDigit, accountType, user, bank) =>{
     api.post('/bank_accounts',{
-        accountName, agency, agencyDigit, accountNumber, accountDigit, accountType, user, bank
+        'accountName': accountName,
+        'agency': agency,
+        'agencyDigit': agencyDigit,
+        'accountNumber': accountNumber,
+        'accountDigit': accountDigit,
+        'accountType': accountType,
+        'user': user,
+        'bank': bank
     })
 }
 
